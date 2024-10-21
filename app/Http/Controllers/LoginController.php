@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class HasilQuesionerController extends Controller
+class LoginController extends Controller
 {
     public function index()
     {
-
+        return view('login');
     }
 }

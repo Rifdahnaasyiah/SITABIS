@@ -15,9 +15,9 @@ class QuesionerSeeder extends Seeder
     {
         $faker = Factory::create('id_ID');
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             Quesioner::create([
-                'jawaban' => $faker->randomLetter()
+                'jawaban' => 'Pertanyaan ' . $i
             ]);
 
         }
