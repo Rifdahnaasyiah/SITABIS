@@ -16,10 +16,6 @@ class PhbsAnswersSeeder extends Seeder
     public function run(): void
     {
         $faker = Factory::create('id_ID');
-        PhbsAnswer::create([
-            'data_masryarakats_id' => DataMasryarakat::all()->random()->id,
-            'quesioners_id' => Quesioner::all()->random()->id,
-        ]);
 
         for ($i = 0; $i < 10; $i++) {
             $data = DataMasryarakat::all()->random()->id;
@@ -27,6 +23,7 @@ class PhbsAnswersSeeder extends Seeder
                 PhbsAnswer::create([
                     'data_masryarakats_id' => $data,
                     'quesioners_id' => Quesioner::all()->random()->id,
+                    'value' => 'asal',
                 ]);
             }
 

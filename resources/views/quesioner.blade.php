@@ -143,15 +143,48 @@
         <div class="container">
             <h2>PENDATAAN PHBS <br> PUSKESMAS CICALENGKA DTP</h2>
             <!-- Question Form -->
-            <form action="process_questions.php" method="post">
-                {{--                {{ $datas }}--}}
+            <form action="{{ url('questioner') }}" method="post">
+                @csrf
+                <!-- Pertanyaan -->
+                <div class="form-group">
+                    <label>Apakah ada ibu bersalin/ bayi di bawah 12 bulan?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="ya1" name="jwb1" value=1 required>
+                        <label for="ya1">Ya</label>
+                        <input type="radio" id="tidak1" name="jwb1" value=0 required>
+                        <label for="tidak1">Tidak</label>
+                    </div>
+                </div>
+
+                <!-- Pertanyaan -->
+                <div class="form-group">
+                    <label>Jika ada, sebutkan jumlahnya!</label>
+                    <input type="number" name="jwb2" required>
+                </div>
+
+                <!-- Pertanyaan -->
+                <div class="form-group">
+                    <label>Berapa usia bayi tersebut?</label>
+                    <input type="number" name="jwb3" required>
+                </div>
+
+                <div>
+                    <label>Desa</label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+
                 @foreach($datas as $data)
                     <div class="form-group">
                         <label>{{ $data->jawaban }}</label>
                         <div class="radio-group">
-                            <input type="radio" id="ya1" name="jwb1" value=1 required>
+                            <input type="radio" name="{{$data->id}}" value=1 required>
                             <label for="ya1">Ya</label>
-                            <input type="radio" id="tidak1" name="jwb1" value=0 required>
+                            <input type="radio" name="{{$data->id}}" value=0 required>
                             <label for="tidak1">Tidak</label>
                         </div>
                     </div>

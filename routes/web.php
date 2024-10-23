@@ -21,5 +21,6 @@ Route::get('/about', [PageController::class, 'about']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/questioner', [QuesionerController::class, 'index']);
+Route::post('/questioner', [QuesionerController::class, 'store']);
 
 

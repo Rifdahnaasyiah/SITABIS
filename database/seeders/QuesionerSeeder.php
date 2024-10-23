@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Quesioner;
-use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class QuesionerSeeder extends Seeder
@@ -13,11 +12,22 @@ class QuesionerSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Factory::create('id_ID');
+        $pertanyan = [
+            'apakah kamu merokok ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'siapa kamu ?',
+            'kamu tinggal dimana ?'
+        ];
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Quesioner::create([
-                'jawaban' => 'Pertanyaan ' . $i
+                'jawaban' => $pertanyan[$i]
             ]);
 
         }

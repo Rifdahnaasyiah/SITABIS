@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PhbsAnswer extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+    
 }
