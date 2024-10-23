@@ -1,10 +1,12 @@
-@extends('layout.page.base')
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
 
-@section('content')
-    {{-- TODO: Buat tampilan login --}}
-    <section id="hero" class="hero section">
-        <div class="container">
-            <h1>Ini Halaman Login</h1>
-        </div>
-    </section><!-- /Hero Section -->
-@endsection
+
+</body>
+</html>

@@ -29,7 +29,9 @@ class QuesionerController extends Controller
 //            'jml_keluarga' => $request->jml_keluarga,
 //        ]);
         $pertanyaan = Quesioner::get();
+        $hasil = 0;
         foreach ($pertanyaan as $key => $data) {
+            $request->get($data->id) == 1 ? $hasil++ : '';
             PhbsAnswer::create([
                 'quesioners_id' => $key + 1,
                 'data_masryarakats_id' => 1,
@@ -37,7 +39,13 @@ class QuesionerController extends Controller
                 'value' => $request->get($data->id)
             ]);
         }
+        if ($hasil >= 1) {
+            return 'anda phbs ';
 
-        return 'data berhasil dibuat';
+        } else {
+            return 'anda tidak phbs';
+
+        }
+
     }
 }
